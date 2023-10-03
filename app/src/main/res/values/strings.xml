@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Calculator</string>
+    <string name="phytagoras">phytagoras</string>
+    <string name="input">input</string>
+    <string name="result">result</string>
+
 </resources>

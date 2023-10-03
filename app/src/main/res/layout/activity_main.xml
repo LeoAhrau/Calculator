@@ -6,12 +6,48 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="231dp"
+        android:layout_height="71dp"
+        android:layout_marginBottom="440dp"
+        android:hint="@string/result"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.372"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="228dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="108dp"
+        android:id="@+id/et_x"
+        android:hint="@string/input"
+        android:layout_width="125dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.839"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_y"
+        android:hint="@string/input"
+        android:layout_width="119dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="68dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/phytagoras_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="156dp"
+        android:text="@string/phytagoras"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
