@@ -18,10 +18,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        phytagorasCalculate.findViewById(R.id.phytagoras_btn);
-        x.findViewById(R.id.et_x);
-        y.findViewById(R.id.et_y);
-        result.findViewById(R.id.tv_result);
+        phytagorasCalculate = findViewById(R.id.phytagoras_btn);
+        x = findViewById(R.id.et_x);
+        y = findViewById(R.id.et_y);
+        result = findViewById(R.id.tv_result);
 
         phytagorasCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
