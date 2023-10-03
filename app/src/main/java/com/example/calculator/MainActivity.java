@@ -16,9 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
     Button phytagorasCalculate;
     Button volumeCalculate;
-
     Button additionCalculate;
-
+    Button divisonCalculate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         phytagorasCalculate = findViewById(R.id.phytagoras_btn);
         volumeCalculate = findViewById(R.id.cylinder_btn);
         additionCalculate = findViewById(R.id.addition_btn);
+        divisonCalculate = findViewById(R.id.division_btn);
 
         setOnClick();
 
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     String xString = x.getText().toString();
                     float convertedX = Float.parseFloat(xString);
-                    String yString = x.getText().toString();
+                    String yString = y.getText().toString();
                     float convertedY = Float.parseFloat(yString);
                     result.setText(String.valueOf(phytagoras(convertedX,convertedY)));
                 } catch(NumberFormatException s) {
@@ -59,9 +59,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                try {
                    String xString = x.getText().toString();
-                   double convertedX = Float.parseFloat(xString);
-                   String yString = x.getText().toString();
-                   double convertedY = Float.parseFloat(yString);
+                   double convertedX = Double.parseDouble(xString);
+                   String yString = y.getText().toString();
+                   double convertedY = Double.parseDouble(yString);
                    result.setText(String.valueOf(volume(convertedX, convertedY)));
                } catch (NumberFormatException s){
                    Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
@@ -75,10 +75,26 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 try {
                     String xString = x.getText().toString();
-                    double convertedX = Float.parseFloat(xString);
-                    String yString = x.getText().toString();
-                    double convertedY = Float.parseFloat(yString);
+                    double convertedX = Double.parseDouble(xString);
+                    String yString = y.getText().toString();
+                    double convertedY = Double.parseDouble(yString);
                     result.setText(String.valueOf(addition(convertedX, convertedY)));
+                } catch (NumberFormatException s){
+                    Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+        divisonCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    String xString = x.getText().toString();
+                    double convertedX = Double.parseDouble(xString);
+                    String yString = y.getText().toString();
+                    double convertedY = Double.parseDouble(yString);
+                    result.setText(String.valueOf(division(convertedX, convertedY)));
                 } catch (NumberFormatException s){
                     Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
                 }
@@ -92,6 +108,11 @@ public class MainActivity extends AppCompatActivity {
     private double addition ( double x, double y){
         double sum = x + y;
         return sum;
+    }
+
+    private double division ( double x, double y){
+        double dsum = x / y;
+        return dsum;
     }
 
     private double volume (double r, double h){
