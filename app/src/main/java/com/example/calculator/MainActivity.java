@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     Button phytagorasCalculate;
     Button volumeCalculate;
 
+    Button additionCalculate;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         phytagorasCalculate = findViewById(R.id.phytagoras_btn);
         volumeCalculate = findViewById(R.id.cylinder_btn);
+        additionCalculate = findViewById(R.id.addition_btn);
 
         setOnClick();
 
@@ -63,6 +66,22 @@ public class MainActivity extends AppCompatActivity {
                } catch (NumberFormatException s){
                    Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
                }
+
+            }
+        });
+
+        additionCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    String xString = x.getText().toString();
+                    double convertedX = Float.parseFloat(xString);
+                    String yString = x.getText().toString();
+                    double convertedY = Float.parseFloat(yString);
+                    result.setText(String.valueOf(addition(convertedX, convertedY)));
+                } catch (NumberFormatException s){
+                    Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
