@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                     float convertedY = Float.parseFloat(yString);
                     result.setText(String.valueOf(phytagoras(convertedX,convertedY)));
                 } catch(NumberFormatException s) {
-                    Toast.makeText(MainActivity.this, "Skriv in giltiga värden", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -61,13 +61,18 @@ public class MainActivity extends AppCompatActivity {
                    double convertedY = Float.parseFloat(yString);
                    result.setText(String.valueOf(volume(convertedX, convertedY)));
                } catch (NumberFormatException s){
-                   Toast.makeText(MainActivity.this, "Skriv in giltiga värden", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
                }
 
             }
         });
 
 
+    }
+
+    private double addition ( double x, double y){
+        double sum = x + y;
+        return sum;
     }
 
     private double volume (double r, double h){
@@ -82,8 +87,8 @@ public class MainActivity extends AppCompatActivity {
               b = b * b;
        float  c = a + b;
 
-        float hypotenusa = c;
-        return hypotenusa;
+        float hypotenuse = c;
+        return hypotenuse;
     }
 
 }

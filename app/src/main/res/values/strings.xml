@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Calculator</string>
     <string name="phytagoras">phytagoras</string>
-    <string name="cylinder_volume">Cylinder volym</string>
+    <string name="cylinder_volume">Cylinder volume</string>
     <string name="input">input</string>
     <string name="result">result</string>
     <string name="addition">+</string>
