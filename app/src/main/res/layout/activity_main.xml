@@ -76,6 +76,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+
+        android:id="@+id/division_btn"
+        android:layout_width="103dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="320dp"
+        android:text="@string/division"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+  
+  
+     <Button
         android:id="@+id/multiply_btn"
         android:layout_width="0dp"
         android:layout_height="53dp"
@@ -99,6 +112,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phytagoras_btn" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
