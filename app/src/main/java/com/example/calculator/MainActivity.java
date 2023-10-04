@@ -10,16 +10,25 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+   
     EditText x;
     EditText y;
     TextView result;
 
     Button phytagorasCalculate;
     Button volumeCalculate;
-
     Button additionCalculate;
 
+
     Button circleCalculate;
+
+    Button divisonCalculate;
+
+
+    Button multiplyCalculate;
+
+    Button subtractionCalculate;
+
 
 
     @Override
@@ -37,6 +46,12 @@ public class MainActivity extends AppCompatActivity {
         circleCalculate = findViewById(R.id.circle_btn);
 
 
+        divisonCalculate = findViewById(R.id.division_btn);
+
+        multiplyCalculate = findViewById(R.id.multiply_btn);
+        subtractionCalculate = findViewById(R.id.subtraction_btn);
+
+
         setOnClick();
 
     }
@@ -50,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     String xString = x.getText().toString();
                     float convertedX = Float.parseFloat(xString);
-                    String yString = x.getText().toString();
+                    String yString = y.getText().toString();
                     float convertedY = Float.parseFloat(yString);
                     result.setText(String.valueOf(phytagoras(convertedX,convertedY)));
                 } catch(NumberFormatException s) {
@@ -64,9 +79,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                try {
                    String xString = x.getText().toString();
-                   double convertedX = Float.parseFloat(xString);
-                   String yString = x.getText().toString();
-                   double convertedY = Float.parseFloat(yString);
+                   double convertedX = Double.parseDouble(xString);
+                   String yString = y.getText().toString();
+                   double convertedY = Double.parseDouble(yString);
                    result.setText(String.valueOf(volume(convertedX, convertedY)));
                } catch (NumberFormatException s){
                    Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
@@ -80,10 +95,42 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 try {
                     String xString = x.getText().toString();
+                    double convertedX = Double.parseDouble(xString);
+                    String yString = y.getText().toString();
+                    double convertedY = Double.parseDouble(yString);
+                    result.setText(String.valueOf(addition(convertedX, convertedY)));
+                } catch (NumberFormatException s){
+                    Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+        multiplyCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    String xString = x.getText().toString();
                     double convertedX = Float.parseFloat(xString);
                     String yString = x.getText().toString();
                     double convertedY = Float.parseFloat(yString);
-                    result.setText(String.valueOf(addition(convertedX, convertedY)));
+                    result.setText(String.valueOf(multiply(convertedX, convertedY)));
+                } catch (NumberFormatException s){
+                    Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
+                }
+              
+              }
+        });
+
+
+        divisonCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    String xString = x.getText().toString();
+                    double convertedX = Double.parseDouble(xString);
+                    String yString = y.getText().toString();
+                    double convertedY = Double.parseDouble(yString);
+                    result.setText(String.valueOf(division(convertedX, convertedY)));
                 } catch (NumberFormatException s){
                     Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
                 }
@@ -105,6 +152,21 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        subtractionCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    String xString = x.getText().toString();
+                    double convertedX = Float.parseFloat(xString);
+                    String yString = x.getText().toString();
+                    double convertedY = Float.parseFloat(yString);
+                    result.setText(String.valueOf(subtraction(convertedX, convertedY)));
+                } catch (NumberFormatException s){
+                    Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
     }
 
 
@@ -113,10 +175,14 @@ public class MainActivity extends AppCompatActivity {
         return sum;
     }
 
-    private double volume (double r, double h){
-        // r = r*r;   Flyttade när till formula
+    private double division ( double x, double y){
+        double dsum = x / y;
+        return dsum;
+    }
 
-        double volyme = Math.PI * r * r * r * h;
+    private double volume (double r, double h) { 
+
+        double volyme = Math.PI * r * r  * h;
         return volyme;
 
     }
@@ -128,10 +194,19 @@ public class MainActivity extends AppCompatActivity {
         float hypotenuse = c;
         return hypotenuse;
     }
+    private double multiply ( double x, double y){
+        return x * y;
+    }
+
 
     private double circle_area (double r){
         double circle_area = Math.PI * r * r;
         return circle_area;
+    }
+
+
+    private double subtraction ( double x, double y){
+        return x-y;
     }
 
 }
