@@ -19,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
 
     Button additionCalculate;
 
+    Button circleCalculate;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         phytagorasCalculate = findViewById(R.id.phytagoras_btn);
         volumeCalculate = findViewById(R.id.cylinder_btn);
         additionCalculate = findViewById(R.id.addition_btn);
+        circleCalculate = findViewById(R.id.circle_btn);
+
 
         setOnClick();
 
@@ -86,8 +91,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        circleCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    String xString = x.getText().toString();
+                    double convertedX = Float.parseFloat(xString);
+                    result.setText(String.valueOf(circle_area(convertedX)));
+                } catch (NumberFormatException s){
+                    Toast.makeText(MainActivity.this,"Please enter a valid number",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
 
     }
+
 
     private double addition ( double x, double y){
         double sum = x + y;
@@ -95,9 +114,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private double volume (double r, double h){
-        r = r*r;
+        // r = r*r;   Flyttade när till formula
 
-        double volyme = Math.PI * r * h;
+        double volyme = Math.PI * r * r * r * h;
         return volyme;
 
     }
@@ -108,6 +127,11 @@ public class MainActivity extends AppCompatActivity {
 
         float hypotenuse = c;
         return hypotenuse;
+    }
+
+    private double circle_area (double r){
+        double circle_area = Math.PI * r * r;
+        return circle_area;
     }
 
 }
