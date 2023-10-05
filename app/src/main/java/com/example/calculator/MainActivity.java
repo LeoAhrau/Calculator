@@ -249,7 +249,4 @@ public class MainActivity extends AppCompatActivity {
         return x-y;
     }
 
-
-
-
 }
