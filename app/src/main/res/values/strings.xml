@@ -5,10 +5,10 @@
     <string name="input">input</string>
     <string name="result">result</string>
     <string name="addition">+</string>
-
+    <string name="Subtraction">-</string>
+    <string name="Multiply">*</string>
     <string name="circle_area">Circle Area</string>
-  
-    <string name="division"> / </string>
+    <string name="division">/</string>
 
 
 </resources>

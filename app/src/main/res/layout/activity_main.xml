@@ -13,6 +13,7 @@
         android:layout_height="71dp"
         android:layout_marginTop="32dp"
         android:hint="@string/result"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.088"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,33 +44,33 @@
         android:id="@+id/phytagoras_btn"
         android:layout_width="104dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="464dp"
+        android:layout_marginBottom="400dp"
         android:text="@string/phytagoras"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/cylinder_btn"
         android:layout_width="104dp"
         android:layout_height="53dp"
-        android:layout_marginEnd="300dp"
+        android:layout_marginEnd="204dp"
         android:text="@string/cylinder_volume"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.311" />
+        app:layout_constraintVertical_bias="0.404" />
 
     <Button
         android:id="@+id/addition_btn"
         android:layout_width="103dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="348dp"
+        android:layout_marginBottom="336dp"
         android:text="@string/addition"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.012"
+        app:layout_constraintHorizontal_bias="0.422"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -77,44 +78,44 @@
         android:id="@+id/division_btn"
         android:layout_width="103dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="408dp"
+        android:layout_marginBottom="468dp"
         android:text="@string/division"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.012"
+        app:layout_constraintHorizontal_bias="0.422"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/multiply_btn"
         android:layout_width="104dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="380dp"
-        android:text="Multiply"
+        android:layout_marginBottom="468dp"
+        android:text="@string/Multiply"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintHorizontal_bias="0.047"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/subtraction_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="300dp"
-        android:text="Subtraction"
+        android:layout_marginBottom="340dp"
+        android:text="@string/Subtraction"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.003"
+        app:layout_constraintHorizontal_bias="0.078"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/circle_btn"
         android:layout_width="103dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="308dp"
+        android:layout_marginBottom="400dp"
         android:text="@string/circle_area"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintHorizontal_bias="0.78"
         app:layout_constraintStart_toStartOf="parent" />
 
 
