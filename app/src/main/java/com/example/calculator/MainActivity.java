@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-   
+
     EditText x;
     EditText y;
     TextView result;
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button subtractionCalculate;
 
+    Button percentCalculate;
 
 
     @Override
@@ -44,18 +45,15 @@ public class MainActivity extends AppCompatActivity {
         volumeCalculate = findViewById(R.id.cylinder_btn);
         additionCalculate = findViewById(R.id.addition_btn);
         circleCalculate = findViewById(R.id.circle_btn);
-
-
         divisonCalculate = findViewById(R.id.division_btn);
-
         multiplyCalculate = findViewById(R.id.multiply_btn);
         subtractionCalculate = findViewById(R.id.subtraction_btn);
+        percentCalculate = findViewById(R.id.percent_btn);
 
 
         setOnClick();
 
     }
-
 
 
     private void setOnClick() {
@@ -67,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
                     float convertedX = Float.parseFloat(xString);
                     String yString = y.getText().toString();
                     float convertedY = Float.parseFloat(yString);
-                    result.setText(String.valueOf(phytagoras(convertedX,convertedY)));
-                } catch(NumberFormatException s) {
+                    result.setText(String.valueOf(phytagoras(convertedX, convertedY)));
+                } catch (NumberFormatException s) {
                     Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -77,15 +75,15 @@ public class MainActivity extends AppCompatActivity {
         volumeCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               try {
-                   String xString = x.getText().toString();
-                   double convertedX = Double.parseDouble(xString);
-                   String yString = y.getText().toString();
-                   double convertedY = Double.parseDouble(yString);
-                   result.setText(String.valueOf(volume(convertedX, convertedY)));
-               } catch (NumberFormatException s){
-                   Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
-               }
+                try {
+                    String xString = x.getText().toString();
+                    double convertedX = Double.parseDouble(xString);
+                    String yString = y.getText().toString();
+                    double convertedY = Double.parseDouble(yString);
+                    result.setText(String.valueOf(volume(convertedX, convertedY)));
+                } catch (NumberFormatException s) {
+                    Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
@@ -99,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                     String yString = y.getText().toString();
                     double convertedY = Double.parseDouble(yString);
                     result.setText(String.valueOf(addition(convertedX, convertedY)));
-                } catch (NumberFormatException s){
+                } catch (NumberFormatException s) {
                     Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
                 }
 
@@ -114,11 +112,11 @@ public class MainActivity extends AppCompatActivity {
                     String yString = y.getText().toString();
                     double convertedY = Float.parseFloat(yString);
                     result.setText(String.valueOf(multiply(convertedX, convertedY)));
-                } catch (NumberFormatException s){
+                } catch (NumberFormatException s) {
                     Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
                 }
-              
-              }
+
+            }
         });
 
 
@@ -131,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                     String yString = y.getText().toString();
                     double convertedY = Double.parseDouble(yString);
                     result.setText(String.valueOf(division(convertedX, convertedY)));
-                } catch (NumberFormatException s){
+                } catch (NumberFormatException s) {
                     Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
                 }
 
@@ -145,8 +143,8 @@ public class MainActivity extends AppCompatActivity {
                     String xString = x.getText().toString();
                     double convertedX = Float.parseFloat(xString);
                     result.setText(String.valueOf(circle_area(convertedX)));
-                } catch (NumberFormatException s){
-                    Toast.makeText(MainActivity.this,"Please enter a valid number",Toast.LENGTH_SHORT).show();
+                } catch (NumberFormatException s) {
+                    Toast.makeText(MainActivity.this, "Please enter a valid number", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -161,53 +159,74 @@ public class MainActivity extends AppCompatActivity {
                     String yString = y.getText().toString();
                     double convertedY = Double.parseDouble(yString);
                     result.setText(String.valueOf(subtraction(convertedX, convertedY)));
-                } catch (NumberFormatException s){
+                } catch (NumberFormatException s) {
                     Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
                 }
 
             }
         });
+
+        percentCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    String xString = x.getText().toString();
+                    double convertedX = Float.parseFloat(xString);
+                    result.setText(String.valueOf(percent(convertedX)));
+                } catch (NumberFormatException s) {
+                    Toast.makeText(MainActivity.this, "Please enter a valid number", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
 
-    private double addition ( double x, double y){
+    private double addition(double x, double y) {
         double sum = x + y;
         return sum;
     }
 
-    private double division ( double x, double y){
+    private double division(double x, double y) {
         double dsum = x / y;
         return dsum;
     }
 
-    private double volume (double r, double h) { 
+    private double volume(double r, double h) {
 
-        double volyme = Math.PI * r * r  * h;
+        double volyme = Math.PI * r * r * h;
         return volyme;
 
     }
-    private float phytagoras(float a, float b){
-              a = a * a;
-              b = b * b;
-       float  c = a + b;
+
+    private float phytagoras(float a, float b) {
+        a = a * a;
+        b = b * b;
+        float c = a + b;
 
         float hypotenuse = c;
         return hypotenuse;
     }
-    private double multiply ( double x, double y){
+
+    private double multiply(double x, double y) {
         return x * y;
     }
 
 
-    private double circle_area (double r){
+    private double circle_area(double r) {
         double circle_area = Math.PI * r * r;
         return circle_area;
     }
 
 
-    private double subtraction ( double x, double y){
-        double sum = x - y;
-        return sum;
+
+    private double subtraction(double x, double y) {
+        return x - y;
+
     }
 
+
+    private double percent(double x) {
+        double percent = x / 100;
+        return percent;
+    }
 }
