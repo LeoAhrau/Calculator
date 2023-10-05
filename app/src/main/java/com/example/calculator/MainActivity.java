@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     String xString = x.getText().toString();
                     double convertedX = Float.parseFloat(xString);
-                    String yString = x.getText().toString();
+                    String yString = y.getText().toString();
                     double convertedY = Float.parseFloat(yString);
                     result.setText(String.valueOf(multiply(convertedX, convertedY)));
                 } catch (NumberFormatException s) {
@@ -155,9 +155,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 try {
                     String xString = x.getText().toString();
-                    double convertedX = Float.parseFloat(xString);
-                    String yString = x.getText().toString();
-                    double convertedY = Float.parseFloat(yString);
+                    double convertedX = Double.parseDouble(xString);
+                    String yString = y.getText().toString();
+                    double convertedY = Double.parseDouble(yString);
                     result.setText(String.valueOf(subtraction(convertedX, convertedY)));
                 } catch (NumberFormatException s) {
                     Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
@@ -218,8 +218,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
     private double subtraction(double x, double y) {
         return x - y;
+
     }
 
 
