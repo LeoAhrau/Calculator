@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button subtractionCalculate;
 
-
+    Button squareRootCalculate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         multiplyCalculate = findViewById(R.id.multiply_btn);
         subtractionCalculate = findViewById(R.id.subtraction_btn);
-
+        squareRootCalculate= findViewById(R.id.square_root_btn);
 
         setOnClick();
 
@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     String xString = x.getText().toString();
                     double convertedX = Float.parseFloat(xString);
-                    String yString = x.getText().toString();
+                    String yString = y.getText().toString();
                     double convertedY = Float.parseFloat(yString);
                     result.setText(String.valueOf(multiply(convertedX, convertedY)));
                 } catch (NumberFormatException s){
@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     String xString = x.getText().toString();
                     double convertedX = Float.parseFloat(xString);
-                    String yString = x.getText().toString();
+                    String yString = y.getText().toString();
                     double convertedY = Float.parseFloat(yString);
                     result.setText(String.valueOf(subtraction(convertedX, convertedY)));
                 } catch (NumberFormatException s){
@@ -167,6 +167,24 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        squareRootCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    String xString = x.getText().toString();
+                    double convertedX = Float.parseFloat(xString);
+                    result.setText(String.valueOf(squareRoot(convertedX)));
+                } catch (NumberFormatException s){
+                    Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+    }
+
+    private double squareRoot(double x) {
+        return Math.sqrt(x);
     }
 
 
