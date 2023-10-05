@@ -5,10 +5,10 @@
     <string name="input">input</string>
     <string name="result">result</string>
     <string name="addition">+</string>
-
     <string name="circle_area">Circle Area</string>
-  
     <string name="division"> / </string>
+    <string name="percent"> % </string>
+
     <string name="square_root">Square Root</string>
 
 </resources>
