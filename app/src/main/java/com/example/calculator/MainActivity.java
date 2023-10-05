@@ -76,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
 
 
                 try {
-                    makeEditTextXTrue();
                     String xString = x.getText().toString();
                     float convertedX = Float.parseFloat(xString);
                     String yString = y.getText().toString();
@@ -94,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                try {
-                   makeEditTextXTrue();
                    String xString = x.getText().toString();
                    double convertedX = Double.parseDouble(xString);
                    String yString = y.getText().toString();
@@ -114,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    makeEditTextXTrue();
                     String xString = x.getText().toString();
                     double convertedX = Double.parseDouble(xString);
                     String yString = y.getText().toString();
@@ -132,7 +129,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    makeEditTextXTrue();
                     String xString = x.getText().toString();
                     double convertedX = Float.parseFloat(xString);
                     String yString = y.getText().toString();
@@ -152,7 +148,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    makeEditTextXTrue();
                     String xString = x.getText().toString();
                     double convertedX = Double.parseDouble(xString);
                     String yString = y.getText().toString();
@@ -171,12 +166,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    makeEditTextYFalse();
                     String xString = x.getText().toString();
                     double convertedX = Float.parseFloat(xString);
                     result.setText(String.valueOf(circle_area(convertedX)));
                     result.setText(decimalMaxNumber.format(circle_area(convertedX)));
-                    makeEditTextXTrue();
                     y.setText("");
                     x.setText("");
                 } catch (NumberFormatException s){
@@ -190,7 +183,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    makeEditTextXTrue();
                     String xString = x.getText().toString();
                     double convertedX = Float.parseFloat(xString);
                     String yString = y.getText().toString();
@@ -257,21 +249,7 @@ public class MainActivity extends AppCompatActivity {
         return x-y;
     }
 
-//slår av et_y
-    private void makeEditTextYFalse() {
-        EditText y = findViewById(R.id.et_y);
-        y.setFocusable(false);
-        y.setFocusableInTouchMode(false);
-        y.setClickable(false);
-        y.setCursorVisible(false);
-    }
-    // slår på et_y
-    private void makeEditTextXTrue() {
-        EditText y = findViewById(R.id.et_y);
-        y.setFocusable(true);
-        y.setFocusableInTouchMode(true);
-        y.setClickable(true);
-        y.setCursorVisible(true);
-    }
+
+
 
 }
