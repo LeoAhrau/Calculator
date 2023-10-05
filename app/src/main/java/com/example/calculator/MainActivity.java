@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button percentCalculate;
 
+    Button squareRootCalculate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         subtractionCalculate = findViewById(R.id.subtraction_btn);
         percentCalculate = findViewById(R.id.percent_btn);
 
+        squareRootCalculate= findViewById(R.id.square_root_btn);
 
         setOnClick();
 
@@ -178,6 +180,24 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        squareRootCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    String xString = x.getText().toString();
+                    double convertedX = Float.parseFloat(xString);
+                    result.setText(String.valueOf(squareRoot(convertedX)));
+                } catch (NumberFormatException s){
+                    Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+    }
+
+    private double squareRoot(double x) {
+        return Math.sqrt(x);
     }
 
 

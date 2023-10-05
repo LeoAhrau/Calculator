@@ -9,5 +9,6 @@
     <string name="division"> / </string>
     <string name="percent"> % </string>
 
+    <string name="square_root">Square Root</string>
 
 </resources>
