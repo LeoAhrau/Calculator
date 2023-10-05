@@ -11,26 +11,34 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
+
 
 public class MainActivity extends AppCompatActivity {
    
     EditText x;
+
     EditText y;
+
     TextView result;
 
     Button phytagorasCalculate;
-    Button volumeCalculate;
-    Button additionCalculate;
 
+    Button volumeCalculate;
+
+    Button additionCalculate;
 
     Button circleCalculate;
 
     Button divisonCalculate;
 
-
     Button multiplyCalculate;
 
     Button subtractionCalculate;
+
+    // stryper decimaltalet till två som max
+    DecimalFormat decimalMaxNumber = new DecimalFormat("#.##");
+
 
 
 
@@ -92,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
                    String yString = y.getText().toString();
                    double convertedY = Double.parseDouble(yString);
                    result.setText(String.valueOf(volume(convertedX, convertedY)));
+                   result.setText(decimalMaxNumber.format(volume(convertedX, convertedY)));
                    y.setText("");
                    x.setText("");
                } catch (NumberFormatException s){
@@ -166,6 +175,7 @@ public class MainActivity extends AppCompatActivity {
                     String xString = x.getText().toString();
                     double convertedX = Float.parseFloat(xString);
                     result.setText(String.valueOf(circle_area(convertedX)));
+                    result.setText(decimalMaxNumber.format(circle_area(convertedX)));
                     makeEditTextXTrue();
                     y.setText("");
                     x.setText("");
@@ -188,12 +198,14 @@ public class MainActivity extends AppCompatActivity {
                     result.setText(String.valueOf(subtraction(convertedX, convertedY)));
                     y.setText("");
                     x.setText("");
+
                 } catch (NumberFormatException s){
                     Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
                 }
 
             }
         });
+
 
 
     }
@@ -261,4 +273,5 @@ public class MainActivity extends AppCompatActivity {
         y.setClickable(true);
         y.setCursorVisible(true);
     }
+
 }
