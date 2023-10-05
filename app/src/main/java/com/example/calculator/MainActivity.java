@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 public class MainActivity extends AppCompatActivity {
    
     EditText x;
@@ -64,13 +65,17 @@ public class MainActivity extends AppCompatActivity {
         phytagorasCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 try {
-                    makeYTrue();
+                    makeEditTextXTrue();
                     String xString = x.getText().toString();
                     float convertedX = Float.parseFloat(xString);
                     String yString = y.getText().toString();
                     float convertedY = Float.parseFloat(yString);
                     result.setText(String.valueOf(phytagoras(convertedX,convertedY)));
+                    y.setText("");
+                    x.setText("");
                 } catch(NumberFormatException s) {
                     Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
                 }
@@ -81,12 +86,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                try {
-                   makeYTrue();
+                   makeEditTextXTrue();
                    String xString = x.getText().toString();
                    double convertedX = Double.parseDouble(xString);
                    String yString = y.getText().toString();
                    double convertedY = Double.parseDouble(yString);
                    result.setText(String.valueOf(volume(convertedX, convertedY)));
+                   y.setText("");
+                   x.setText("");
                } catch (NumberFormatException s){
                    Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
                }
@@ -98,12 +105,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    makeYTrue();
+                    makeEditTextXTrue();
                     String xString = x.getText().toString();
                     double convertedX = Double.parseDouble(xString);
                     String yString = y.getText().toString();
                     double convertedY = Double.parseDouble(yString);
                     result.setText(String.valueOf(addition(convertedX, convertedY)));
+                    y.setText("");
+                    x.setText("");
                 } catch (NumberFormatException s){
                     Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
                 }
@@ -114,12 +123,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    makeYTrue();
+                    makeEditTextXTrue();
                     String xString = x.getText().toString();
                     double convertedX = Float.parseFloat(xString);
                     String yString = y.getText().toString();
                     double convertedY = Float.parseFloat(yString);
                     result.setText(String.valueOf(multiply(convertedX, convertedY)));
+                    y.setText("");
+                    x.setText("");
                 } catch (NumberFormatException s){
                     Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
                 }
@@ -132,12 +143,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    makeYTrue();
+                    makeEditTextXTrue();
                     String xString = x.getText().toString();
                     double convertedX = Double.parseDouble(xString);
                     String yString = y.getText().toString();
                     double convertedY = Double.parseDouble(yString);
                     result.setText(String.valueOf(division(convertedX, convertedY)));
+                    y.setText("");
+                    x.setText("");
                 } catch (NumberFormatException s){
                     Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
                 }
@@ -149,11 +162,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    makeYFalse();
+                    makeEditTextYFalse();
                     String xString = x.getText().toString();
                     double convertedX = Float.parseFloat(xString);
                     result.setText(String.valueOf(circle_area(convertedX)));
-                    makeYTrue();
+                    makeEditTextXTrue();
+                    y.setText("");
+                    x.setText("");
                 } catch (NumberFormatException s){
                     Toast.makeText(MainActivity.this,"Please enter a valid number",Toast.LENGTH_SHORT).show();
                 }
@@ -165,18 +180,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    makeYTrue();
+                    makeEditTextXTrue();
                     String xString = x.getText().toString();
                     double convertedX = Float.parseFloat(xString);
                     String yString = y.getText().toString();
                     double convertedY = Float.parseFloat(yString);
                     result.setText(String.valueOf(subtraction(convertedX, convertedY)));
+                    y.setText("");
+                    x.setText("");
                 } catch (NumberFormatException s){
                     Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
                 }
 
             }
         });
+
+
     }
 
 
@@ -227,7 +246,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 //slår av et_y
-    private void makeYFalse() {
+    private void makeEditTextYFalse() {
         EditText y = findViewById(R.id.et_y);
         y.setFocusable(false);
         y.setFocusableInTouchMode(false);
@@ -235,14 +254,11 @@ public class MainActivity extends AppCompatActivity {
         y.setCursorVisible(false);
     }
     // slår på et_y
-    private void makeYTrue() {
+    private void makeEditTextXTrue() {
         EditText y = findViewById(R.id.et_y);
         y.setFocusable(true);
         y.setFocusableInTouchMode(true);
         y.setClickable(true);
         y.setCursorVisible(true);
     }
-
-
-
 }
