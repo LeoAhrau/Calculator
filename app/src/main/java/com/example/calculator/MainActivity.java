@@ -1,5 +1,7 @@
 package com.example.calculator;
 
+
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -63,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
+                    makeYTrue();
                     String xString = x.getText().toString();
                     float convertedX = Float.parseFloat(xString);
                     String yString = y.getText().toString();
@@ -78,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                try {
+                   makeYTrue();
                    String xString = x.getText().toString();
                    double convertedX = Double.parseDouble(xString);
                    String yString = y.getText().toString();
@@ -94,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
+                    makeYTrue();
                     String xString = x.getText().toString();
                     double convertedX = Double.parseDouble(xString);
                     String yString = y.getText().toString();
@@ -109,9 +114,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
+                    makeYTrue();
                     String xString = x.getText().toString();
                     double convertedX = Float.parseFloat(xString);
-                    String yString = x.getText().toString();
+                    String yString = y.getText().toString();
                     double convertedY = Float.parseFloat(yString);
                     result.setText(String.valueOf(multiply(convertedX, convertedY)));
                 } catch (NumberFormatException s){
@@ -126,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
+                    makeYTrue();
                     String xString = x.getText().toString();
                     double convertedX = Double.parseDouble(xString);
                     String yString = y.getText().toString();
@@ -142,9 +149,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
+                    makeYFalse();
                     String xString = x.getText().toString();
                     double convertedX = Float.parseFloat(xString);
                     result.setText(String.valueOf(circle_area(convertedX)));
+                    makeYTrue();
                 } catch (NumberFormatException s){
                     Toast.makeText(MainActivity.this,"Please enter a valid number",Toast.LENGTH_SHORT).show();
                 }
@@ -156,9 +165,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
+                    makeYTrue();
                     String xString = x.getText().toString();
                     double convertedX = Float.parseFloat(xString);
-                    String yString = x.getText().toString();
+                    String yString = y.getText().toString();
                     double convertedY = Float.parseFloat(yString);
                     result.setText(String.valueOf(subtraction(convertedX, convertedY)));
                 } catch (NumberFormatException s){
@@ -171,42 +181,68 @@ public class MainActivity extends AppCompatActivity {
 
 
     private double addition ( double x, double y){
+
         double sum = x + y;
         return sum;
     }
 
     private double division ( double x, double y){
+
         double dsum = x / y;
         return dsum;
     }
 
-    private double volume (double r, double h) { 
+    private double volume (double r, double h) {
 
         double volyme = Math.PI * r * r  * h;
         return volyme;
 
     }
     private float phytagoras(float a, float b){
+
               a = a * a;
               b = b * b;
        float  c = a + b;
 
         float hypotenuse = c;
         return hypotenuse;
+
     }
     private double multiply ( double x, double y){
+
         return x * y;
     }
 
 
     private double circle_area (double r){
+
         double circle_area = Math.PI * r * r;
         return circle_area;
+
     }
 
 
     private double subtraction ( double x, double y){
         return x-y;
     }
+
+//slår av et_y
+    private void makeYFalse() {
+        EditText y = findViewById(R.id.et_y);
+        y.setFocusable(false);
+        y.setFocusableInTouchMode(false);
+        y.setClickable(false);
+        y.setCursorVisible(false);
+    }
+    // slår på et_y
+    private void makeYTrue() {
+        EditText y = findViewById(R.id.et_y);
+        y.setFocusable(true);
+        y.setFocusableInTouchMode(true);
+        y.setClickable(true);
+        y.setCursorVisible(true);
+    }
+
+
 
 }
