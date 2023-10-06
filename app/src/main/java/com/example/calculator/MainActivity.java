@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText x;
     EditText y;
-    TextView result;
+    EditText result;
 
     Button phytagorasCalculate;
     Button volumeCalculate;
@@ -40,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
         x = findViewById(R.id.et_x);
         y = findViewById(R.id.et_y);
-        result = findViewById(R.id.tv_result);
+        result = findViewById(R.id.result1);
 
-        phytagorasCalculate = findViewById(R.id.phytagoras_btn);
+        phytagorasCalculate = findViewById(R.id.pythagorean_btn);
         volumeCalculate = findViewById(R.id.cylinder_btn);
         additionCalculate = findViewById(R.id.addition_btn);
         circleCalculate = findViewById(R.id.circle_btn);
@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         multiplyCalculate = findViewById(R.id.multiply_btn);
         subtractionCalculate = findViewById(R.id.subtraction_btn);
         percentCalculate = findViewById(R.id.percent_btn);
-
         squareRootCalculate= findViewById(R.id.square_root_btn);
 
         setOnClick();
