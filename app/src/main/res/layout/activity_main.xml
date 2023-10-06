@@ -9,7 +9,7 @@
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -96,7 +96,7 @@
         app:layout_constraintVertical_bias="0.689" />
 
     <Button
-        android:id="@+id/pythagorean_btn"
+        android:id="@+id/phytagoras_btn"
         style="@style/Button"
         android:layout_width="@dimen/_110dp"
         android:layout_height="@dimen/_110dp"

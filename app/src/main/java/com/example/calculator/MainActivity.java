@@ -14,9 +14,9 @@ import java.text.DecimalFormat;
 public class MainActivity extends AppCompatActivity {
     //Group Diamond Knights
 
-    //Skapar EditText, TextView och Button variabler
+    //Creates EditText, TextView, Buttons
     EditText x,y;
-            TextView result;
+    TextView result;
     Button pythagoreanCalculate,volumeCalculate,additionCalculate,circleCalculate,divisionCalculate,multiplyCalculate,subtractionCalculate,percentCalculate,squareRootCalculate;
 
     DecimalFormat decimalMaxNumber = new DecimalFormat("#.##");
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         y = findViewById(R.id.et_y);
         result = findViewById(R.id.tv_result);
 
-        pythagoreanCalculate = findViewById(R.id.pythagorean_btn);
+        pythagoreanCalculate = findViewById(R.id.phytagoras_btn);
         volumeCalculate = findViewById(R.id.cylinder_btn);
         additionCalculate = findViewById(R.id.addition_btn);
         circleCalculate = findViewById(R.id.circle_btn);
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // method som setter onclick
+    // Method that contains all the onclick buttons
     private void setOnClick() {
         pythagoreanCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                     float convertedX = Float.parseFloat(xString);
                     String yString = y.getText().toString();
                     float convertedY = Float.parseFloat(yString);
-                    result.setText(String.valueOf(phytagoras(convertedX, convertedY)));
+                    result.setText(String.valueOf(pythagorean(convertedX, convertedY)));
                     x.setText("");
                     y.setText("");
                 } catch (NumberFormatException s) {
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
         volumeCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
-            // view Method som gör kör första när man clickar en button
+            // A view method that runs the desired onclick code
             public void onClick(View view) {
                 try {
                     String xString = x.getText().toString();
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        //  addition button click listener
+        //  Addition onclick listener
         additionCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        // multiplication button click listener
+        // Multiplication onclick listener
         multiplyCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //  Division button click listener
+        //  Division onclick listener
         divisionCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        //  circel button click listener
+        //  Circle area onclick listener
         circleCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //  Subtraction button click listener
+        //  Subtraction onclick listener
         subtractionCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        //  percent button click listener
+        //  Percent click listener
         percentCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        //  Square root button click listener
+        //  Square root onclick listener
         squareRootCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -213,11 +213,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    //addition Method
+    //addition method
     private double addition(double x, double y) {
         return x + y;
     }
-    // division Method
+    // division method
     private double division(double x, double y) {
         return x / y;
     }
@@ -225,35 +225,35 @@ public class MainActivity extends AppCompatActivity {
     private double volume(double r, double h) {
         return Math.PI * r * r * h;
     }
-    // phytagoras Method
-    private float phytagoras(float a, float b) {
+    // pythagorean method
+    private float pythagorean(float a, float b) {
         a = a * a;
         b = b * b;
 
         return a + b;
     }
-    // multilpication Method
+    // multiplication method
     private double multiply(double x, double y) {
         return x * y;
     }
 
-    //  circel method
+    //  circle method
     private double circle_area(double r) {
         return Math.PI * r * r;
     }
 
 
-    // subtraction Method
+    // subtraction method
     private double subtraction(double x, double y) {
         return x - y;
 
     }
 
-    // Percent Method
+    // Percent method
     private double percent( double part, double whole) {
         return (part / whole) * 100;
     }
-    // Square root Method
+    // Square root method
     private double squareRoot(double x) {
         return Math.sqrt(x);
     }
