@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText x;
@@ -31,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
     Button percentCalculate;
 
-    Button squareRootCalculate;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +53,8 @@ public class MainActivity extends AppCompatActivity {
         multiplyCalculate = findViewById(R.id.multiply_btn);
         subtractionCalculate = findViewById(R.id.subtraction_btn);
         percentCalculate = findViewById(R.id.percent_btn);
-        squareRootCalculate= findViewById(R.id.square_root_btn);
+        DecimalFormat decimalMaxNumber = new DecimalFormat("#.##");
+
 
         setOnClick();
 
@@ -82,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
                     String yString = y.getText().toString();
                     double convertedY = Double.parseDouble(yString);
                     result.setText(String.valueOf(volume(convertedX, convertedY)));
+                    result.setText(decimalMaxNumber.format(volume(convertedX, convertedY)));
                 } catch (NumberFormatException s) {
                     Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
                 }
@@ -173,30 +178,14 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     String xString = x.getText().toString();
                     double convertedX = Float.parseFloat(xString);
-                    result.setText(String.valueOf(percent(convertedX)));
+                    String yString = y.getText().toString();
+                    double convertedY = Double.parseDouble(yString);
+                    result.setText(String.valueOf(percent(convertedX, convertedY ) + "%"));
                 } catch (NumberFormatException s) {
                     Toast.makeText(MainActivity.this, "Please enter a valid number", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
-        squareRootCalculate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    String xString = x.getText().toString();
-                    double convertedX = Float.parseFloat(xString);
-                    result.setText(String.valueOf(squareRoot(convertedX)));
-                } catch (NumberFormatException s){
-                    Toast.makeText(MainActivity.this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });
-    }
-
-    private double squareRoot(double x) {
-        return Math.sqrt(x);
     }
 
 
@@ -244,8 +233,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private double percent(double x) {
-        double percent = x / 100;
-        return percent;
+    private double percent( double part, double whole) {
+       double totPercent = (part / whole) * 100;
+        return totPercent;
     }
 }
