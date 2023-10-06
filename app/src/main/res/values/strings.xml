@@ -1,14 +1,17 @@
 <resources>
     <string name="app_name">Calculator</string>
-    <string name="phytagoras">phytagoras</string>
+    <string name="calculator">Calculator</string>
+    <string name="pythagorean">a² + b² = c²</string>
     <string name="cylinder_volume">Cylinder volume</string>
-    <string name="input">input</string>
-    <string name="result">result</string>
+    <string name="input">Input</string>
+    <string name="input2">Input (This field is not used for square root nor circle area)</string>
+    <string name="result">Result</string>
     <string name="addition">+</string>
     <string name="circle_area">Circle Area</string>
     <string name="division"> / </string>
     <string name="percent"> % </string>
-
+    <string name="subtraction"> - </string>
     <string name="square_root">Square Root</string>
+    <string name="multiply"> * </string>
 
 </resources>
