@@ -15,18 +15,9 @@ public class MainActivity extends AppCompatActivity {
     //Group Diamond Knights
 
     //Skapar EditText, TextView och Button variabler
-    EditText x;
-    EditText y;
-    TextView result;
-    Button pythagoreanCalculate;
-    Button volumeCalculate;
-    Button additionCalculate;
-    Button circleCalculate;
-    Button divisionCalculate;
-    Button multiplyCalculate;
-    Button subtractionCalculate;
-    Button percentCalculate;
-    Button squareRootCalculate;
+    EditText x,y;
+            TextView result;
+    Button pythagoreanCalculate,volumeCalculate,additionCalculate,circleCalculate,divisionCalculate,multiplyCalculate,subtractionCalculate,percentCalculate,squareRootCalculate;
 
     DecimalFormat decimalMaxNumber = new DecimalFormat("#.##");
 
@@ -58,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    // method som setter onclick
     private void setOnClick() {
         pythagoreanCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
         volumeCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
+            // view Method som gör kör första när man clickar en button
             public void onClick(View view) {
                 try {
                     String xString = x.getText().toString();
@@ -94,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+        //  addition button click listener
         additionCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -112,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        // multiplication button click listener
         multiplyCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -130,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        //  Division button click listener
         divisionCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -148,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+        //  circel button click listener
         circleCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -165,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        //  Subtraction button click listener
         subtractionCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -183,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+        //  percent button click listener
         percentCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -200,6 +194,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        //  Square root button click listener
         squareRootCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -218,11 +213,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
+    //addition Method
     private double addition(double x, double y) {
         return x + y;
     }
-
+    // division Method
     private double division(double x, double y) {
         return x / y;
     }
@@ -230,34 +225,35 @@ public class MainActivity extends AppCompatActivity {
     private double volume(double r, double h) {
         return Math.PI * r * r * h;
     }
-
+    // phytagoras Method
     private float phytagoras(float a, float b) {
         a = a * a;
         b = b * b;
 
         return a + b;
     }
-
+    // multilpication Method
     private double multiply(double x, double y) {
         return x * y;
     }
 
-
+    //  circel method
     private double circle_area(double r) {
         return Math.PI * r * r;
     }
 
 
-
+    // subtraction Method
     private double subtraction(double x, double y) {
         return x - y;
 
     }
 
-
+    // Percent Method
     private double percent( double part, double whole) {
         return (part / whole) * 100;
     }
+    // Square root Method
     private double squareRoot(double x) {
         return Math.sqrt(x);
     }
