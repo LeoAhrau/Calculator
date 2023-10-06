@@ -3,4 +3,9 @@
     <dimen name="big_font">40sp</dimen>
     <dimen name="small_font">15sp</dimen>
     <dimen name="medium_font">25sp</dimen>
+    <dimen name="layout_width">25sp</dimen>
+    <dimen name="_110dp">100dp</dimen>
+    <dimen name="_300dp">300dp</dimen>
+    <dimen name="_70dp">70dp</dimen>
+
 </resources>
