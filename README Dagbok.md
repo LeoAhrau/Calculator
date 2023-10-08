@@ -37,3 +37,8 @@ Project defined, The tasks are distributed between group members
 ### all merged
 ### Appearance discussed with group members
 ### Design details added
+
+
+## 08/10/2023
+### Dagbok/Readme added
+
